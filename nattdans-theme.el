@@ -1,9 +1,11 @@
-;;; tango-dark-theme.el --- Tango-based custom theme for faces  -*- lexical-binding:t -*-
+;;; nattdans-theme.el --- Nattdans, an adaption of the Emacs Tango-dark theme -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2010-2025 Free Software Foundation, Inc.
+;; Copyright (C) 2026 Marcus Lundgren <marcus.lundgren@gmail.com>
 
 ;; Authors: Chong Yidong <cyd@stupidchicken>
 ;;          Jan Moringen <jan.moringen@uni-bielefeld.de>
+;;          Marcus Lundgren <marcus.lundgren@gmail.com>
 
 ;; This file is part of GNU Emacs.
 
@@ -22,14 +24,15 @@
 
 ;;; Commentary:
 
+;; This is an adaptation of the Emacs Tango-dark theme, originally part of GNU Emacs.
 ;; The colors in this theme come from the Tango palette, which is in
 ;; the public domain: http://tango.freedesktop.org/
 
 ;;; Code:
 
 ;;;###theme-autoload
-(deftheme tango-dark
-  "Face colors using the Tango palette (dark background).
+(deftheme nattdans
+  "Face colors using a modified Tango palette (dark background).
 Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
 Semantic, and Ansi-Color faces are included."
   :background-mode 'dark
@@ -55,14 +58,26 @@ Semantic, and Ansi-Color faces are included."
       (cyan-1 "#34e2e2") (cyan-2 "#06989a"))
 
   (custom-theme-set-faces
-   'tango-dark
+   'nattdans
    ;; Ensure sufficient contrast on low-color terminals.
-   `(default ((((class color) (min-colors 4096))
-	       (:foreground ,alum-1 :background ,alum-6))
-	      (((class color) (min-colors 256))
-	       (:foreground ,alum-1 :background "#222"))
-	      (,class
-	       (:foreground ,alum-1 :background "black"))))
+   `(default ((,class (:background "#1e1e1e" :foreground "#eeeeec"))))
+   `(bold ((,class (:foreground "deep sky blue" :weight bold))))
+   `(diff-indicator-added ((,class (:inherit diff-added :foreground "SeaGreen1"))))
+   `(error ((,class (:foreground "dark orange"))))
+   `(font-lock-comment-face ((,class (:foreground "dark gray" :slant italic))))
+   `(icomplete-selected-match ((,class (:box (:line-width (2 . 2) :color "grey75" :style released-button)))))
+   `(ido-only-match ((,class (:foreground "lime green"))))
+   `(ido-subdir ((,class (:foreground "dark orange"))))
+   `(info-menu-star ((,class (:foreground "dark orange"))))
+   `(line-number ((,class (:inherit (shadow default) :foreground "gray38"))))
+   `(line-number-current-line ((,class (:weight semi-bold :foreground "yellow" :inherit line-number))))
+   `(magit-diff-context-highlight ((,class (:extend t :background "#114" :foreground "grey70"))))
+   `(magit-log-author ((,class (:foreground "goldenrod" :slant normal :weight normal))))
+   `(markdown-bold-face ((,class (:inherit bold :weight ultra-bold))))
+   `(org-level-4 ((,class (:inherit outline-4 :foreground "dark turquoise"))))
+   `(term-color-blue ((,class (:background "DeepSkyBlue2" :foreground "DeepSkyBlue2"))))
+   `(term-color-green ((,class (:background "lawn green" :foreground "lawn green"))))
+   `(term-color-red ((,class (:background "dark orange" :foreground "dark orange"))))
    `(cursor ((,class (:background ,butter-1))))
    `(header-line ((,class (:background "#666"))))
    ;; Highlighting faces
@@ -171,14 +186,14 @@ Semantic, and Ansi-Color faces are included."
    `(semantic-tag-boundary-face ((,class (:overline ,blue-1))))
    `(semantic-unmatched-syntax-face ((,class (:underline ,red-1))))
    ;; ANSI colors
-   `(ansi-color-black ((,class (:background ,alum-7 :foreground ,alum-7))))
-   `(ansi-color-red ((,class (:background ,red-1 :foreground ,red-1))))
-   `(ansi-color-green ((,class (:background ,cham-2 :foreground ,cham-2))))
-   `(ansi-color-yellow ((,class (:background ,butter-2 :foreground ,butter-2))))
-   `(ansi-color-blue ((,class (:background ,blue-2 :foreground ,blue-2))))
-   `(ansi-color-magenta ((,class (:background ,plum-1 :foreground ,plum-1))))
-   `(ansi-color-cyan ((,class (:background ,cyan-2 :foreground ,cyan-2))))
-   `(ansi-color-white ((,class (:background ,alum-2 :foreground ,alum-2))))
+   `(ansi-color-black ((,class (:background "#212526" :foreground "#212526"))))
+   `(ansi-color-red ((,class (:background "#ff4b4b" :foreground "#ff4b4b"))))
+   `(ansi-color-green ((,class (:background "#b4fa70" :foreground "#b4fa70"))))
+   `(ansi-color-yellow ((,class (:background "#fce94f" :foreground "#fce94f"))))
+   `(ansi-color-blue ((,class (:background "#729fcf" :foreground "#729fcf"))))
+   `(ansi-color-magenta ((,class (:background "#e090d7" :foreground "#e090d7"))))
+   `(ansi-color-cyan ((,class (:background "#8cc4ff" :foreground "#8cc4ff"))))
+   `(ansi-color-white ((,class (:background "#eeeeec" :foreground "#eeeeec"))))
    `(ansi-color-bright-black ((,class (:background ,alum-5
 				       :foreground ,alum-5))))
    `(ansi-color-bright-red ((,class (:background ,red-0 :foreground ,red-0))))
@@ -195,6 +210,6 @@ Semantic, and Ansi-Color faces are included."
    `(ansi-color-bright-white ((,class (:background ,alum-1
 				       :foreground ,alum-1))))))
 
-(provide-theme 'tango-dark)
+(provide-theme 'nattdans)
 
-;;; tango-dark-theme.el ends here
+;;; nattdans-theme.el ends here
