@@ -5,7 +5,7 @@ To load from a local copy:
 
 ```lisp
 (use-package nattdans-theme
-  :load-path "~/prog/git/my-emacs-theme/")
+  :load-path "~/path/to/nattdans-theme.el/")
 ```
 
 To load from GitHub:
