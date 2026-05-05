@@ -80,7 +80,7 @@ Semantic, and Ansi-Color faces are included."
    `(term-color-green ((,class (:background "lawn green" :foreground "lawn green"))))
    `(term-color-red ((,class (:background "dark orange" :foreground "dark orange"))))
    `(cursor ((,class (:background ,butter-1))))
-   `(header-line ((,class (:background "#666"))))
+   `(header-line ((,class (:background "#3d3d3d"))))
    ;; Highlighting faces
    `(fringe ((,class (:background ,alum-7))))
    `(highlight ((,class (:foreground ,alum-6 :background "#c0c000"))))
